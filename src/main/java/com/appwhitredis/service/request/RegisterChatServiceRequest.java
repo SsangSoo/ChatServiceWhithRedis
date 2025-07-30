@@ -1,4 +1,4 @@
-package com.nineonesoft.appwhitredis.service.request;
+package com.appwhitredis.service.request;
 
 import lombok.Builder;
 import lombok.Getter;

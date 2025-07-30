@@ -1,6 +1,6 @@
-package com.nineonesoft.appwhitredis.domain;
+package com.appwhitredis.domain;
 
-import com.nineonesoft.appwhitredis.controller.response.ResponseChatMessage;
+import com.appwhitredis.controller.response.ResponseChatMessage;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

@@ -1,8 +1,8 @@
-package com.nineonesoft.appwhitredis.service;
+package com.appwhitredis.service;
 
-import com.nineonesoft.appwhitredis.domain.ChatSession;
-import com.nineonesoft.appwhitredis.repository.RedisChatRepository;
-import com.nineonesoft.appwhitredis.service.request.RegisterChatServiceRequest;
+import com.appwhitredis.domain.ChatSession;
+import com.appwhitredis.repository.RedisChatRepository;
+import com.appwhitredis.service.request.RegisterChatServiceRequest;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

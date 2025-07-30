@@ -1,6 +1,6 @@
-package com.nineonesoft.appwhitredis.domain;
+package com.appwhitredis.domain;
 
-import com.nineonesoft.appwhitredis.service.request.RegisterChatServiceRequest;
+import com.appwhitredis.service.request.RegisterChatServiceRequest;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;

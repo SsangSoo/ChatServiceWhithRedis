@@ -1,6 +1,6 @@
-package com.nineonesoft.appwhitredis.repository;
+package com.appwhitredis.repository;
 
-import com.nineonesoft.appwhitredis.domain.ChatSession;
+import com.appwhitredis.domain.ChatSession;
 import org.springframework.data.repository.CrudRepository;
 
 public interface RedisChatRepository extends CrudRepository<ChatSession, Long> {

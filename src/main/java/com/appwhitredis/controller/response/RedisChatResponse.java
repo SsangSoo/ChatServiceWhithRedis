@@ -1,4 +1,4 @@
-package com.nineonesoft.appwhitredis.controller.response;
+package com.appwhitredis.controller.response;
 
 import lombok.Builder;
 import lombok.Getter;

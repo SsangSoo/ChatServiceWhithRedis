@@ -2,7 +2,7 @@ spring:
   application:
     name: appwhitredis
   redis:
-    host: localhost
+    host: ${host}
     port: 6379
     lettuce:
       pool:

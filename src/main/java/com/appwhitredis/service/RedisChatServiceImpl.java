@@ -1,10 +1,10 @@
-package com.nineonesoft.appwhitredis.service;
+package com.appwhitredis.service;
 
-import com.nineonesoft.appwhitredis.controller.response.RedisChatResponse;
-import com.nineonesoft.appwhitredis.domain.ChatMessage;
-import com.nineonesoft.appwhitredis.domain.ChatSession;
-import com.nineonesoft.appwhitredis.repository.RedisChatRepository;
-import com.nineonesoft.appwhitredis.service.request.RegisterChatServiceRequest;
+import com.appwhitredis.controller.response.RedisChatResponse;
+import com.appwhitredis.domain.ChatMessage;
+import com.appwhitredis.domain.ChatSession;
+import com.appwhitredis.repository.RedisChatRepository;
+import com.appwhitredis.service.request.RegisterChatServiceRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -19,11 +19,19 @@ public class RedisChatServiceImpl implements RedisChatService {
 
     @Override
     @Transactional
-    public RedisChatResponse registerChat(Long chatId, RegisterChatServiceRequest request) {
+    public RedisChatResponse registerChat(Long chatId, RegisterChatServiceRequest request) throws InterruptedException {
         ChatSession chatSession = redisChatRepository.findById(chatId)
                 .orElseGet(() -> new ChatSession(chatId));
         chatSession.insert(request);
         ChatSession saveChat = redisChatRepository.save(chatSession);
+
+        log.info("저장 완료");
+
+        log.info("2초 지연");
+
+        Thread.sleep(2000);
+
+        log.info("2초 지연 완료");
 
         return RedisChatResponse.of(
                 saveChat.getChatId(),
