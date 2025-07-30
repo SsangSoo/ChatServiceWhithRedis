@@ -25,6 +25,14 @@ public class RedisChatServiceImpl implements RedisChatService {
         chatSession.insert(request);
         ChatSession saveChat = redisChatRepository.save(chatSession);
 
+        log.info("저장 완료");
+
+        log.info("2초 지연");
+
+        Thread.sleep(2000);
+
+        log.info("2초 지연 완료");
+
         return RedisChatResponse.of(
                 saveChat.getChatId(),
                 saveChat.getChatMessageList().stream()
