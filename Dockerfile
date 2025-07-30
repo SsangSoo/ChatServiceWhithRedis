@@ -1,9 +1,9 @@
-# 빌드
+# Build
 FROM openjdk:17-slim AS build
 
 WORKDIR /app
 
-COPY . .
+COPY --chown=gradle:gradle . .
 
 RUN ./gradlew clean build -x test
 
@@ -13,7 +13,7 @@ FROM bellsoft/liberica-openjdk-alpine:17
 
 WORKDIR /app
 
-COPY --from=builder /app/build/libs/*.jar app.jar
+COPY --from=build /app/build/libs/*SNAPSHOT.jar /app/app.jar
 
 EXPOSE 8080
 
