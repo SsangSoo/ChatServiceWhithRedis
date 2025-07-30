@@ -18,4 +18,3 @@ COPY --from=build /app/build/libs/*SNAPSHOT.jar /app/app.jar
 EXPOSE 8080
 
 ENTRYPOINT ["java","-jar","app.jar"]
->>>>>>> 47df737e9b8efe43f037b567749148198323bb2e
